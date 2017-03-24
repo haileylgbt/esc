@@ -1,0 +1,213 @@
+title Esc
+author Harry
+homepage https://discord.gg/B6pqsXr
+zoomscreen 8x4
+
+
+========
+OBJECTS
+========
+
+Background
+lightgrey
+00000
+00000
+00000
+00000
+00000
+
+Wall
+grey
+00000
+00000
+00000
+00000
+00000
+
+Player
+#00ffff blue
+00000
+01010
+01010
+00000
+00000
+
+Finish
+Black White
+01010
+10101
+01010
+10101
+01010
+
+Door1
+darkgrey
+.....
+.....
+00000
+.....
+.....
+
+Door2
+darkgrey
+..0..
+..0..
+..0..
+..0..
+..0..
+
+Crate
+yellow
+00000
+00000
+00000
+00000
+00000
+
+Button
+#ff0000 lightgrey
+11111
+10001
+10001
+10001
+11111
+
+Stairs1
+lightgrey grey darkgrey black
+00000
+11111
+22222
+33333
+33333
+
+Enemy
+#ff0000
+00000
+00000
+00000
+00000
+00000
+
+=======
+LEGEND
+=======
+
+. = Background
+# = Wall
+P = Player
+* = Finish
+D = Door1
+e = Door2
+c = crate
+o = button
+s = stairs1
+n = enemy
+
+
+
+=======
+SOUNDS
+=======
+
+Player MOVE 10505107
+startgame 19773902
+endlevel 41052906
+closemessage 32889505
+restart 92555303
+
+================
+COLLISIONLAYERS
+================
+
+Background
+Stairs1
+Finish, Door1, Door2, Button
+Player, Wall, Crate, enemy
+
+======
+RULES
+======
+[ Background > Player | Door1 | Background ] -> [ Background | Door1 | Player Background]
+[ Background > Player | Door2 | Background ] -> [ Background | Door2 | Player Background]
+[ >  Player | Crate ] -> [  >  Player | > Crate  ]
+[ >  Crate | Crate ] -> [  >  Crate | > Crate  ]
+[ >  Player | Background ] -> [  Player | > Enemy  ]
+==============
+WINCONDITIONS
+==============
+
+All Player on Finish
+All Crate on Button
+
+=======
+LEVELS
+=======
+message Room 1
+message Hello, test subject.
+########
+#p.....#
+#......#
+#.....*#
+########
+message I have been expecting you.
+########
+#......#
+#......#
+#.....p#
+######d#
+#......#
+#.####.#
+#*.....#
+########
+message Sorry for the twists and turns.
+#########
+#......##
+#......##
+#......##
+######d##
+#......##
+#.####.##
+#p.....##
+#d#######
+#.#...#*#
+#.#.#.#.#
+#.#.#.#.#
+#...#...#
+#########
+message Just through this mini maze and you're into the next room.
+###############
+#......##.###*#
+#......##.###.#
+#......##.###.#
+######d##.....#
+#......##.###.#
+#.####.##.###.#
+#......##.#####
+#d#######.#####
+#.#...#pe.####.
+#.#.#.#.#.####.
+#.#.#.#.#.####.
+#...#...#.####.
+#########......
+message Room 2
+message I introduce to you our latest invention, the crate and button.
+message You know what to do.
+########
+#.c...o#
+#.######
+#.######
+#.######
+#......#
+#......#
+#p....*#
+#s######
+message By the way, do you like our newly installed stairs?
+########
+#.c...o#
+#.######
+#.cc.oo#
+#.######
+#......#
+#......#
+#p....*#
+#s######
